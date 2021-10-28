@@ -9,11 +9,12 @@
    </head>
    <body>
    <div class="header">
-       <ul>
+       <ul class="first-ul">
+             <li class="first-ul-li homeLi"><a href="{{url('/')}}" class="homeLi">Home</a></li>
             <div class="CartButton">
                 <a href="#">
                     <i class="fa" style="font-size:24px">&#xf07a;</i>
-                    <span class='badge badge-warning' id='lblCartCount'> 5 </span>
+                    <span class='badge badge-warning' id='lblCartCount'> 0 </span>
                 </a>
             </div>
             <!--<li><a href="#">Home</a></li>
@@ -21,11 +22,31 @@
             <li><a href="#">Our Services</a></li>-->
             @if (Route::has('login'))
                  @auth
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <div class="dropdown userProfileDropDown">
+                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Order</a></li>
+                        @if(Auth::user()->rol == 1)
+                         <li><a class="dropdown-item" href="#">User List</a></li>
+                         @endif
+                         <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                         </li>
+                      </ul>
+                    </div>
                  @else
-                    <li><a href="{{ route('login') }}">Log in</a></li>
+                    <li class="first-ul-li"><a href="{{ route('login') }}">Log in</a></li>
                     @if (Route::has('register'))
-                       <li><a href="{{ route('register') }}">Register</a></li>
+                       <li class="first-ul-li"><a href="{{ route('register') }}">Register</a></li>
                     @endif
                 @endauth
             @endif
@@ -233,5 +254,7 @@
           </div>
         </div>
       </footer>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
    </body>
 </html>

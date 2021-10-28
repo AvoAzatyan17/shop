@@ -159,19 +159,19 @@ a:hover {
     background-color: #444444;
     transform: translateY(-50%);
 }
-.header ul {
+.header .first-ul {
     background: #01010114;
     display: table;
     padding: 10px 20px;
     width: 100%;
 }
-.header ul li {
+.header .first-ul .first-ul-li {
     list-style: none;
     display: inline-block;
     margin-left: 8px;
     float: right;
 }
-.header ul li a {
+.header .first-ul-li a {
     font-family: arial;
     color: #000;
     text-decoration: none;
@@ -180,10 +180,10 @@ a:hover {
     font-size: 18px;
     display: block;
 }
-.header ul li a + a {
+.header .first-ul-li  a + a {
     margin-left: 16px;
 }
-.header ul li a::after {
+.header .first-ul-li a::after {
     content: '';
     position: absolute;
     left: 0px;
@@ -195,9 +195,12 @@ a:hover {
     transition: transform 0.5s ease;
     transform: scaleX(0);
 }
-.header ul a:hover::after {
+.header .first-ul-li a:hover::after {
     transform-origin: bottom left;
     transform: scaleX(1);
+}
+.homeLi{
+    float: left !important;
 }
 .CartButton{
     float: right;
@@ -218,7 +221,13 @@ a:hover {
     -moz-border-radius: 9px;
     border-radius: 9px;
 }
-
+.userProfileDropDown{
+    display: inline-block;
+    margin-left: 8px;
+    float: right;
+    padding: 15px 10px;
+    font-size: 18px;
+}
 .CartButton .label-warning[href],
 .CartButton .badge-warning[href] {
     background-color: #c67605;
