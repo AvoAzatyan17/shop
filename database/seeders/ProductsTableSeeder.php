@@ -29,5 +29,20 @@ class ProductsTableSeeder extends Seeder
             'image'        => '2.jpg',
             'tax'          => '15',
         ]);
+        DB::table('products')->insert([
+            'product_name' => 'Here Product Title3',
+            'price'        => '50',
+            'category_id'  => '1',
+            'image'        => '2.jpg',
+            'tax'          => '10',
+        ]);
+        DB::table('products')->insert([
+            'product_name' => 'Here Product Title4',
+            'price'        => '60',
+            'category_id'  => '2',
+            'image'        => '2.jpg',
+            'tax'          => '12',
+            'dimension'    => '22',
+        ]);
     }
 }
