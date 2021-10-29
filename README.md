@@ -1,4 +1,4 @@
-Laravel min shop list
+Laravel mini shop
 
 How to run project
 1.clone project
