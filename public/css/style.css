@@ -116,7 +116,13 @@ a:hover {
     display: inline-block;
     margin-right: 4px;
 }
-
+#tentacles{
+    width: 50px;
+}
+.single-product{
+    border: 1px solid #fff3cd;
+    padding: 5px;
+}
 .section-products .single-product .part-1 ul li a {
     display: inline-block;
     width: 40px;
@@ -143,6 +149,7 @@ a:hover {
 }
 .product-price{
     float: right;
+    margin-top: -27px;
 }
 .section-products .single-product .part-2 .product-old-price {
     position: relative;
@@ -408,4 +415,14 @@ label.radio input:checked+span {
 }
 .orderPage table{
     margin-top: 60px;
+}
+.countProd{
+    width: 50px;
+    margin-top: 9px;
+}
+.addToCartDiv{
+    float: right;
+}
+.delete-item {
+    background: #bb2d3b !important;
 }
